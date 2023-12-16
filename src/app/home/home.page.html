@@ -1,20 +1,60 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title class="ion-text-center">Discover App Announcements</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding content-center">
+    <!-- Add button to visit announcements -->
+    <ion-button expand="full" (click)="goToAnnouncements()" shape="round">
+        <ion-icon slot="start" name="megaphone"></ion-icon>
+        Announcements
+    </ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <!-- Card for total announcements -->
+    <ion-card class="statistics-card">
+        <ion-card-content>
+            <ion-card-title>Total Announcements</ion-card-title>
+            <ion-card-subtitle>{{ totalAnnouncements }}</ion-card-subtitle>
+        </ion-card-content>
+    </ion-card>
+
+    <!-- Card for announcements today -->
+    <ion-card class="statistics-card">
+        <ion-card-content>
+            <ion-card-title>Added Today</ion-card-title>
+            <ion-card-subtitle>{{ announcementsToday }}</ion-card-subtitle>
+        </ion-card-content>
+    </ion-card>
+
+    <!-- Card for announcements yesterday -->
+    <ion-card class="statistics-card">
+        <ion-card-content>
+            <ion-card-title>Added previously</ion-card-title>
+            <ion-card-subtitle>{{ announcementsYesterday }}</ion-card-subtitle>
+        </ion-card-content>
+    </ion-card>
+
 </ion-content>
+
+<!-- Dark mode switcher in the footer -->
+<ion-footer color="primary">
+     <!-- Use a flex container for the login and register buttons -->
+     <div class="flex-container">
+        <!-- Add button to navigate to login page -->
+        <ion-button shape="round" expand="half" (click)="goToLoginPage()">
+            <ion-icon slot="start" name="log-in"></ion-icon>
+            Login
+        </ion-button>
+
+        <!-- Add button to navigate to register page -->
+        <ion-button shape="round" expand="half" (click)="goToRegisterPage()">
+            <ion-icon slot="start" name="person-add"></ion-icon>
+            Register
+        </ion-button>
+    </div>
+    <ion-button expand="full" fill="solid"  shape="round" (click)="toggleDarkMode()">
+      <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
+      {{ darkModeLabel }}
+    </ion-button>
+  </ion-footer>

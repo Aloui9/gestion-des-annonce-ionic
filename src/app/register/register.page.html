@@ -1,0 +1,49 @@
+<!-- register.page.html -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="end">
+      Register
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding content-center">
+  <ion-item>
+    <ion-label position="floating">First Name</ion-label>
+    <ion-input [(ngModel)]="firstName" name="firstName" type="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Last Name</ion-label>
+    <ion-input [(ngModel)]="lastName" name="lastName" type="text"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="email" name="email" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
+  </ion-item>
+
+  <div class="ion-text-end ion-margin-vertical">
+    <ion-button shape="round" (click)="register()">
+      <ion-icon slot="end" name="person-add"></ion-icon>
+      Register
+    </ion-button>
+  </div>
+</ion-content>
+
+<!-- Dark mode switcher in the footer -->
+<ion-footer color="primary">
+  <ion-button expand="full" fill="solid"  shape="round" (click)="toggleDarkMode()">
+    <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
+    {{ darkModeLabel }}
+  </ion-button>
+ </ion-footer>

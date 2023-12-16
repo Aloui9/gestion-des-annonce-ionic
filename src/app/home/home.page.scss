@@ -25,3 +25,67 @@
 #container a {
   text-decoration: none;
 }
+
+/* home.page.scss */
+
+
+ion-button[expand="half"] {
+  max-width: 50%;
+  width: 100%;
+}
+
+/* Add this to your global styles or component-specific styles */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+ion-button[expand="half"] {
+  max-width: 48%; /* Adjust the max-width as needed */
+  width: 100%;
+}
+
+/* src/app/home/home.page.scss */
+
+.statistics-card {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px; /* Add padding for spacing */
+
+  ion-card-content {
+    ion-card-title {
+      font-size: 24px; /* Increase font size for the title */
+    }
+
+    ion-card-subtitle {
+      font-size: 32px; /* Increase font size for the subtitle (number) */
+      font-weight: bold; /* Optionally, make the number bold */
+      margin-top: 8px; /* Add margin for spacing */
+    }
+  }
+}
+
+
+
+.dark-mode-button {
+  --background: var(--ion-color-dark);
+  --color: var(--ion-color-light);
+  --border-radius: 15px;
+  --box-shadow: none;
+  --padding-start: 16px;
+  --padding-end: 16px;
+
+  ion-icon {
+    --color: var(--ion-color-light);
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    --background: var(--ion-color-dark-shade);
+  }
+}
