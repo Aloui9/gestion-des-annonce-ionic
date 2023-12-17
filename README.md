@@ -51,5 +51,33 @@ Make sure you have the following installed:
 
 4. Set up Firebase:
 
-    ```bash
-    ionic serve
+    - Create a new Firebase project on the Firebase Console.
+    - Obtain your Firebase configuration and replace it in src/environments/environment.ts.
+    - Configure Firebase Authentication (email/password) in the Firebase Console.
+
+5. Run the application:
+
+    ```bas
+     ionic serve
+
+### Usage
+
+    - Access the application by navigating to http://localhost:8100/ in your web browser.
+    - Register a new user or log in with an existing account.
+    - Explore the available features such as creating announcements, viewing the list of announcements, and toggling dark mode.
+
+### Folder Structure
+
+   - src/app: Contains the Angular components, services, and modules.
+   - src/assets: Contains static assets such as images.
+   - src/environments: Contains environment configuration files.
+   - src/services: Contains Angular services.
+   - src/models: Contains TypeScript interfaces for data models.
+
+### Contributing
+
+    - Contributions are welcome! Feel free to open issues or submit pull requests.
+
+### License
+
+    - This project is licensed under the MIT License.
