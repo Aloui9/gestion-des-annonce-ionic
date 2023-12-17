@@ -34,17 +34,6 @@ ion-button[expand="half"] {
   width: 100%;
 }
 
-/* Add this to your global styles or component-specific styles */
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-ion-button[expand="half"] {
-  max-width: 48%; /* Adjust the max-width as needed */
-  width: 100%;
-}
-
 /* src/app/home/home.page.scss */
 
 .statistics-card {
@@ -88,4 +77,8 @@ ion-button[expand="half"] {
   &:hover {
     --background: var(--ion-color-dark-shade);
   }
+}
+
+.megaphone{
+  font-size: 35px;
 }

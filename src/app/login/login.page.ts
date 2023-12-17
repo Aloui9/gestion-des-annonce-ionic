@@ -10,11 +10,16 @@ import { UserService } from 'src/services/user.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  // Properties for dark mode
   isDarkMode: boolean;
   darkModeIcon: string = 'moon';
   darkModeLabel: string = 'Dark Mode';
+
+  // Input fields for username and password
   username: string = '';
   password: string = '';
+
+  // Users data
   users: any;
 
   constructor(
@@ -23,32 +28,34 @@ export class LoginPage implements OnInit {
     private toastController: ToastController,
     private router: Router
   ) {
+    // Initialize dark mode based on user preferences
     this.isDarkMode = this.themeService.isDarkMode();
   }
 
-
   ngOnInit(): void {
-    console.log("Login");
+    console.log("Login page initialized");
   }
 
+  // Update dark mode button based on user preferences
   private updateDarkModeButton() {
     this.darkModeIcon = this.themeService.isDarkMode() ? 'sunny' : 'moon';
     this.darkModeLabel = this.themeService.isDarkMode() ? 'Light Mode' : 'Dark Mode';
   }
 
-
+  // Toggle dark mode when the user clicks the dark mode button
   toggleDarkMode() {
     this.themeService.setDarkMode(!this.themeService.isDarkMode());
     this.updateDarkModeButton();
   }
 
+  // Attempt to log in the user
   async login() {
     try {
       // Check if the user exists in the database
       this.userService.doesUserExist(this.username, this.password).subscribe({
         next: (response) => {
           if (response) {
-            // User exists, save email in local storage or perform additional actions
+            // User exists, save email in local storage and navigate to the home page
             localStorage.setItem('userEmail', this.username);
             this.username = '';
             this.password = '';
@@ -69,7 +76,7 @@ export class LoginPage implements OnInit {
     }
   }
 
-
+  // Display a toast message
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
@@ -79,5 +86,4 @@ export class LoginPage implements OnInit {
     });
     toast.present();
   }
-
 }

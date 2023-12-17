@@ -1,10 +1,11 @@
-<!-- register.page.html -->
-
 <ion-header>
+  <!-- Navigation bar with back button and page title -->
   <ion-toolbar color="primary">
+    <!-- Back button to navigate to the previous page -->
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
+    <!-- Page title -->
     <ion-title slot="end">
       Register
     </ion-title>
@@ -12,28 +13,35 @@
 </ion-header>
 
 <ion-content class="ion-padding content-center">
+  <!-- Form for user registration -->
   <ion-item>
+    <!-- Input field for the first name -->
     <ion-label position="floating">First Name</ion-label>
     <ion-input [(ngModel)]="firstName" name="firstName" type="text"></ion-input>
   </ion-item>
-  
+
   <ion-item>
+    <!-- Input field for the last name -->
     <ion-label position="floating">Last Name</ion-label>
     <ion-input [(ngModel)]="lastName" name="lastName" type="text"></ion-input>
   </ion-item>
-  
+
   <ion-item>
+    <!-- Input field for the email address -->
     <ion-label position="floating">Email</ion-label>
     <ion-input [(ngModel)]="email" name="email" type="text"></ion-input>
   </ion-item>
 
   <ion-item>
+    <!-- Input field for the password -->
     <ion-label position="floating">Password</ion-label>
     <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
   </ion-item>
 
   <div class="ion-text-end ion-margin-vertical">
+    <!-- Button to trigger the registration process -->
     <ion-button shape="round" (click)="register()">
+      <!-- Icon and label for the registration button -->
       <ion-icon slot="end" name="person-add"></ion-icon>
       Register
     </ion-button>
@@ -42,8 +50,10 @@
 
 <!-- Dark mode switcher in the footer -->
 <ion-footer color="primary">
-  <ion-button expand="full" fill="solid"  shape="round" (click)="toggleDarkMode()">
+  <!-- Button to toggle dark mode -->
+  <ion-button expand="full" fill="solid" shape="round" (click)="toggleDarkMode()">
+    <!-- Icon for dark mode and label to indicate the current mode -->
     <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
     {{ darkModeLabel }}
   </ion-button>
- </ion-footer>
+</ion-footer>

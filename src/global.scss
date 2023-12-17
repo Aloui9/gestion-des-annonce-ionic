@@ -29,6 +29,7 @@ body{
   --ion-color-primary: #a579f3 !important;
   background: url('./assets/light-bg.png') center top no-repeat;
   background-size: cover;
+  --ion-border-color:#e4e6ff !important; 
 }
 
 ion-content {
@@ -41,6 +42,17 @@ ion-footer {
   padding: 16px; /* Add padding for spacing */
 }
 
+
+/* Add this to your global styles or component-specific styles */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+ion-button[expand="half"] {
+  max-width: 48%; /* Adjust the max-width as needed */
+  width: 100%;
+}
    /*
      * Dark Colors
      * -------------------------------------------

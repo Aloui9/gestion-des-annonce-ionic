@@ -1,0 +1,46 @@
+<!-- announcement-details.page.html -->
+
+<!-- Header section -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <!-- Back button to navigate to the previous page -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <!-- Title of the page -->
+    <ion-title>
+      Announcement Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Main content section -->
+<ion-content>
+  <!-- Display announcement details if available -->
+  <ion-card *ngIf="announcement">
+    <!-- Card header displays the title of the announcement -->
+    <ion-card-header>
+      {{ announcement.title }}
+    </ion-card-header>
+    <!-- Card content displays other details such as image, price, category, etc. -->
+    <ion-card-content>
+      <!-- Display the image of the announcement -->
+      <img expand="full" [src]="announcement.imageUrl" alt="Announcement Image">
+      <!-- Description of the announcement -->
+      <p><strong>Description:</strong> {{ announcement.description }}</p>
+      <!-- Price of the announcement -->
+      <p><strong>Price:</strong> {{ announcement.price }} DT</p>
+      <!-- Category of the announcement -->
+      <p><strong>Category:</strong> {{ announcement.category }}</p>
+      <!-- Add more details as needed -->
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Display a message if the announcement is not available -->
+  <ion-card *ngIf="!announcement">
+    <ion-card-header>
+      <!-- Message indicating that the announcement is not available -->
+      <p><strong>Announcement is not available</strong></p>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

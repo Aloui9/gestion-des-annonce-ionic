@@ -1,0 +1,62 @@
+<ion-header>
+  <!-- Navigation toolbar with back button and title -->
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <!-- Back button navigating to the announcements page -->
+      <ion-back-button defaultHref="/announcements"></ion-back-button>
+    </ion-buttons>
+    <!-- Title of the page -->
+    <ion-title slot="end">
+      My Announcements
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <!-- Loop through announcements and display each in a row -->
+    <ion-card *ngFor="let announcement of tmpAnnouncements">
+      <ion-item-sliding>
+        <!-- Main item content -->
+        <ion-item>
+          <!-- Row for displaying image and information -->
+          <ion-row>
+            <ion-col size="4" class="image-column">
+              <!-- Display the image of the announcement in a larger column -->
+              <img [src]="announcement.imageUrl" alt="Announcement Image">
+            </ion-col>
+            <ion-col size="8">
+              <!-- Announcement details -->
+              <ion-label>
+                <h2><strong>{{ announcement.title }}</strong></h2>
+                <p><strong>Price:</strong> {{ announcement.price }} DT</p>
+                <p><strong>Category:</strong> {{ announcement.category }}</p>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+
+        <!-- Swipeable options for the item -->
+        <ion-item-options>
+          <!-- Option to delete the announcement -->
+          <ion-item-option (click)="presentAlert(announcement.id)" color="danger">Delete</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+<!-- Dark mode switcher in the footer -->
+<ion-footer color="primary">
+  <!-- Button to navigate to the add-announcement page -->
+  <ion-button expand="full" fill="solid" shape="round" [routerLink]="['/add-announcement']">
+    <ion-icon slot="start" name="add"></ion-icon>
+    Create Ad
+  </ion-button>
+  <!-- Button to toggle dark mode -->
+  <ion-button expand="full" fill="solid" shape="round" (click)="toggleDarkMode()">
+    <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
+    {{ darkModeLabel }}
+  </ion-button>
+</ion-footer>

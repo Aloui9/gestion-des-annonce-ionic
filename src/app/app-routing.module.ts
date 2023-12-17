@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'add-announcement',
     loadChildren: () => import('./add-announcement/add-announcement.module').then( m => m.AddAnnouncementPageModule)
   },
+  {
+    path: 'my-announcements',
+    loadChildren: () => import('./my-announcements/my-announcements.module').then( m => m.MyAnnouncementsPageModule)
+  },
+  {
+    path: 'announcement-details',
+    loadChildren: () => import('./announcement-details/announcement-details.module').then( m => m.AnnouncementDetailsPageModule)
+  },
 ];
 
 @NgModule({

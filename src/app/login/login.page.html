@@ -1,6 +1,5 @@
-<!-- login.page.html -->
-
 <ion-header>
+  <!-- Header with back button and title -->
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -12,31 +11,35 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <!-- Your login content goes here -->
+  <!-- Login form content -->
   <ion-item>
     <ion-label position="floating">Email</ion-label>
+    <!-- Input field for email with two-way data binding (ngModel) -->
     <ion-input [(ngModel)]="username" name="username" type="text"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Password</ion-label>
+    <!-- Input field for password with two-way data binding (ngModel) -->
     <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
   </ion-item>
 
+  <!-- Login button with click event -->
   <div class="ion-text-end ion-margin-vertical">
     <ion-button shape="round" (click)="login()">
+      <!-- Login icon on the button -->
       <ion-icon slot="end" name="log-in"></ion-icon>
       Login
     </ion-button>
   </div>
 </ion-content>
 
-
-
 <!-- Dark mode switcher in the footer -->
 <ion-footer color="primary">
- <ion-button expand="full" fill="solid"  shape="round" (click)="toggleDarkMode()">
-   <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
-   {{ darkModeLabel }}
- </ion-button>
+  <!-- Dark mode switch button with click event -->
+  <ion-button expand="full" fill="solid" shape="round" (click)="toggleDarkMode()">
+    <!-- Dark mode icon on the button -->
+    <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
+    {{ darkModeLabel }}
+  </ion-button>
 </ion-footer>

@@ -1,60 +1,63 @@
 <ion-header>
     <ion-toolbar color="primary">
-        <ion-title class="ion-text-center">Discover App Announcements</ion-title>
+        <!-- Centered title for the header -->
+        <ion-title class="ion-text-center">Discover Announcements</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding content-center">
-    <!-- Add button to visit announcements -->
-    <ion-button expand="full" (click)="goToAnnouncements()" shape="round">
-        <ion-icon slot="start" name="megaphone"></ion-icon>
-        Announcements
-    </ion-button>
-
     <!-- Card for total announcements -->
-    <ion-card class="statistics-card">
+    <ion-card class="statistics-card" (click)="goToAnnouncements()">
         <ion-card-content>
-            <ion-card-title>Total Announcements</ion-card-title>
+            <!-- Megaphone icon on the left side of the card -->
+            <ion-icon color="primary" class="megaphone" slot="start" expand="fill" name="megaphone"></ion-icon>
+            <!-- Card title and subtitle for total announcements -->
+            <ion-card-title>Announcements</ion-card-title>
             <ion-card-subtitle>{{ totalAnnouncements }}</ion-card-subtitle>
         </ion-card-content>
     </ion-card>
 
-    <!-- Card for announcements today -->
-    <ion-card class="statistics-card">
+    <!-- Card for user's announcements -->
+    <ion-card class="statistics-card" (click)="goToMyAnnouncements()">
         <ion-card-content>
-            <ion-card-title>Added Today</ion-card-title>
-            <ion-card-subtitle>{{ announcementsToday }}</ion-card-subtitle>
+            <!-- Megaphone icon on the left side of the card -->
+            <ion-icon color="primary" class="megaphone" slot="start" expand="fill" name="megaphone"></ion-icon>
+            <!-- Card title and subtitle for user's announcements -->
+            <ion-card-title>My Announcements</ion-card-title>
+            <ion-card-subtitle>{{ myAnnouncements }}</ion-card-subtitle>
         </ion-card-content>
     </ion-card>
-
-    <!-- Card for announcements yesterday -->
-    <ion-card class="statistics-card">
-        <ion-card-content>
-            <ion-card-title>Added previously</ion-card-title>
-            <ion-card-subtitle>{{ announcementsYesterday }}</ion-card-subtitle>
-        </ion-card-content>
-    </ion-card>
-
 </ion-content>
 
-<!-- Dark mode switcher in the footer -->
+<!-- Footer section with buttons -->
 <ion-footer color="primary">
-     <!-- Use a flex container for the login and register buttons -->
-     <div class="flex-container">
-        <!-- Add button to navigate to login page -->
+    <!-- Flex container for login and register buttons -->
+    <div class="flex-container">
+        <!-- Button to navigate to the login page -->
         <ion-button shape="round" expand="half" (click)="goToLoginPage()">
             <ion-icon slot="start" name="log-in"></ion-icon>
             Login
         </ion-button>
 
-        <!-- Add button to navigate to register page -->
+        <!-- Button to navigate to the register page -->
         <ion-button shape="round" expand="half" (click)="goToRegisterPage()">
             <ion-icon slot="start" name="person-add"></ion-icon>
             Register
         </ion-button>
     </div>
-    <ion-button expand="full" fill="solid"  shape="round" (click)="toggleDarkMode()">
-      <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
-      {{ darkModeLabel }}
-    </ion-button>
-  </ion-footer>
+
+    <!-- Flex container for logout and dark mode buttons -->
+    <div class="flex-container">
+        <!-- Button to log out -->
+        <ion-button shape="round" expand="half" (click)="logOut()">
+            <ion-icon slot="start" name="log-out"></ion-icon>
+            Logout
+        </ion-button>
+
+        <!-- Button to toggle dark mode -->
+        <ion-button expand="half" fill="solid" shape="round" (click)="toggleDarkMode()">
+            <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
+            {{ darkModeLabel }}
+        </ion-button>
+    </div>
+</ion-footer>

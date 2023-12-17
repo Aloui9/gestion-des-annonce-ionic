@@ -1,50 +1,68 @@
+<!-- Header section -->
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
+      <!-- Back button to navigate to the previous page -->
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title slot="end">
-      Add Announcement
+      <!-- Title of the page -->
+      Create Ad
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!-- Main content section -->
 <ion-content>
+  <!-- Form for creating a new ad -->
   <ion-list>
 
+    <!-- Title input field -->
     <ion-item>
       <ion-label position="floating">Title</ion-label>
       <ion-input [(ngModel)]="announcementForm.title" type="text"></ion-input>
     </ion-item>
+
+    <!-- Description textarea -->
     <ion-item>
       <ion-label position="floating">Description</ion-label>
       <ion-textarea [(ngModel)]="announcementForm.description"></ion-textarea>
     </ion-item>
+
+    <!-- Image URL input field -->
     <ion-item>
       <ion-label position="floating">Image URL</ion-label>
       <ion-input [(ngModel)]="announcementForm.imageUrl" type="url"></ion-input>
     </ion-item>
+
+    <!-- Price input field -->
     <ion-item>
       <ion-label position="floating">Price</ion-label>
       <ion-input [(ngModel)]="announcementForm.price" type="number"></ion-input>
     </ion-item>
+
+    <!-- Category input field -->
     <ion-item>
       <ion-label position="floating">Category</ion-label>
       <ion-input [(ngModel)]="announcementForm.category" type="text"></ion-input>
     </ion-item>
+
   </ion-list>
-  <div class="ion-text-end ion-margin-vertical">
+
+  <!-- Button to create a new ad -->
+  <div class="ion-text-end ion-margin-vertical ion-margin-horizontal">
     <ion-button shape="round" (click)="addAnnouncement()">
+      <!-- Icon and text for creating ad -->
       <ion-icon slot="end" name="add"></ion-icon>
-      Add Announcement
+      Create Ad
     </ion-button>
   </div>
 </ion-content>
 
 <!-- Dark mode switcher in the footer -->
 <ion-footer color="primary">
-  <ion-button expand="full" fill="solid" shape="round"
-    (click)="toggleDarkMode()">
+  <!-- Button to toggle dark mode -->
+  <ion-button expand="full" fill="solid" shape="round" (click)="toggleDarkMode()">
     <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
     {{ darkModeLabel }}
   </ion-button>
