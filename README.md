@@ -39,6 +39,17 @@ Make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/gestion-des-annonces-ionic.git
 
-```bash cd gestion-des-annonces-ionic
-```bash npm install
-```bash ionic serve
+2. Change into the project directory:
+
+    ```bash
+    cd gestion-des-annonces-ionic
+
+3. Install dependencies:
+
+    ```bas
+     npm install
+
+4. Set up Firebase:
+
+    ```bash
+    ionic serve
