@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="end">
+      Add Announcement
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input [(ngModel)]="announcementForm.title" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea [(ngModel)]="announcementForm.description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Image URL</ion-label>
+      <ion-input [(ngModel)]="announcementForm.imageUrl" type="url"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Price</ion-label>
+      <ion-input [(ngModel)]="announcementForm.price" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Category</ion-label>
+      <ion-input [(ngModel)]="announcementForm.category" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="ion-text-end ion-margin-vertical">
+    <ion-button shape="round" (click)="addAnnouncement()">
+      <ion-icon slot="end" name="add"></ion-icon>
+      Add Announcement
+    </ion-button>
+  </div>
+</ion-content>
+
+<!-- Dark mode switcher in the footer -->
+<ion-footer color="primary">
+  <ion-button expand="full" fill="solid" shape="round"
+    (click)="toggleDarkMode()">
+    <ion-icon slot="start" [name]="darkModeIcon"></ion-icon>
+    {{ darkModeLabel }}
+  </ion-button>
+</ion-footer>
