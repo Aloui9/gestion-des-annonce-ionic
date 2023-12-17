@@ -39,6 +39,6 @@ Make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/gestion-des-annonces-ionic.git
 
-cd gestion-des-annonces-ionic
-npm install
-ionic serve
+```bash cd gestion-des-annonces-ionic
+```bash npm install
+```bash ionic serve
